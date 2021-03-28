@@ -109,7 +109,7 @@ function(e){
         // Call the UI prototypes
         ui.addBookToList(book);
         Store.addBook(book);
-        ui.showAlert(`Book successfully added!`, `success`);
+        ui.showAlert(`Successfully Queued!`, `success`);
         ui.clearFields();
     }
     

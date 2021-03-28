@@ -162,10 +162,10 @@ function sendEmailToStudent(email, name) {
 
 	Email.send({
 	Host: "smtp.gmail.com",
-	Username : `106network@gmail.com`,
-	Password : `21290104961166`,
+	Username : `notifier.edu.link@gmail.com`,
+	Password : `notifier.edu.link@gmail.ca`,
 	To : `${email}`,
-	From : "106network@gmail.com",
+	From : "notifier.edu.link@gmail.com",
 	Subject : "You've Been Matched Up!",
 	Body : `Hello ${name}!
     \n
@@ -181,10 +181,10 @@ function sendEmailToMentor(mentorEmail, mentorName, email, name, subject) {
 	
     Email.send({
 	Host: "smtp.gmail.com",
-	Username : `106network@gmail.com`,
-	Password : `21290104961166`,
+	Username : `notifier.edu.link@gmail.com`,
+	Password : `notifier.edu.link@gmail.ca`,
 	To : `${mentorEmail}`,
-	From : "106network@gmail.com",
+	From : "notifier.edu.link@gmail.com",
 	Subject : "Here is your new student!",
 	Body : `Hello ${mentorName}!
     \n
