@@ -4,24 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing</title>
+    <title>Title Page</title>
 </head>
 <body>
-
-    <form action="">
-        <input id = "student" type="button"  value="Student">
-        <input id = "teacher" type="button"  value="Teacher">
-    </form>
-    
+    <button id = "student">Student</button>
+    <button id = "teacher">Teacher</button>
     
     <script>
-        document.querySelector('#student').addEventListener('click', () => {
-            location.href = "./studentSubjects.html"
-        })
+        document.querySelector(`#student`).onclick = () => {
+            location.href = `./student.html`
+        }
 
-        document.querySelector('#teacher').addEventListener('click', () => {
-            location.href = "./teacherSubjects.html"
-        })
+        document.querySelector(`#teacher`).onclick = () => {
+            location.href = `./teacher.html`
+        }
     </script>
 </body>
 </html>
