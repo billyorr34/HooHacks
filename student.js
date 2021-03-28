@@ -104,7 +104,7 @@ function(e){
     //Validate
     if(title === `` || author === `` || isbn === ``){
         // Error alert
-        ui.showAlert(`Please fill in all fields`, `error`);
+        ui.showAlert(`Please fill in all the fields`, `error`);
     } else {
         // Call the UI prototypes
         ui.addBookToList(book);

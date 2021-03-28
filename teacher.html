@@ -11,6 +11,9 @@
         integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
         crossorigin="anonymous" />
     <style>
+        *{
+            color: white;
+        }
         .success,
         .error {
             color: white;
@@ -19,11 +22,15 @@
         }
 
         .success {
-            background: rgb(104, 218, 246);
+            color: rgb(104, 218, 246);
+            font-size: large;
+            border: 2px solid rgb(104, 218, 246);
         }
 
         .error {
-            background: #ffab9d;
+            color: #ffab9d;
+            font-size: large;
+            border: 2px solid #ffab9d;
         }
 
         input[type=text],
@@ -36,7 +43,8 @@
             outline: none;
             padding: 3px 0px 3px 3px;
             margin: 5px 1px 3px 0px;
-            border: 1px solid #DDDDDD;
+            border: 2px solid #DDDDDD;
+            background-color: transparent;
         }
 
         input[type=text]:focus,
@@ -57,6 +65,10 @@
 
         td a{
             text-align: center;
+        }
+
+        body {
+            background-image: url('picutre.png');
         }
 
     </style>
