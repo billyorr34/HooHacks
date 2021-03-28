@@ -120,32 +120,78 @@ function(e){
     e.preventDefault();
 });
 
+function fieldsAreFilled() {
+    let name = document.querySelector(`#title`).value;
+    let email = document.querySelector(`#author`).value;
+
+    if (name === "" || email === ""){
+        return false;
+    } else 
+    return true;
+}
+
 //Event Listener for Delete
 document.getElementById(`book-list`).addEventListener(`click`, function(e){
     const ui = new UI();
 
-    ui.deleteBook(e.target);
-    Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
-    ui.showAlert(`Sucessfuly deleted`, `success`);
+    if(fieldsAreFilled()) {
 
-    let email = e.target.parentElement.previousElementSibling.previousElementSibling.textContent;
+        ui.deleteBook(e.target);
+        Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
+    
+        let subject = e.target.parentElement.previousElementSibling.textContent;
+        let email = e.target.parentElement.previousElementSibling.previousElementSibling.textContent;
+        let name = e.target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.textContent;
 
-    sendEmail(email);
-
-    e.preventDefault();
+        let mentorName = document.querySelector(`#title`).value;
+        let mentorEmail = document.querySelector(`#author`).value;
+    
+        sendEmailToStudent(email, name);
+        sendEmailToMentor(mentorEmail, mentorName, email, name, subject);
+    
+        ui.showAlert(`A confirmation email was sent! Follow up with the student! `, `success`)
+        e.preventDefault();
+    } else {
+        ui.showAlert(`Please fill in your Name and Email`, `error`)
+    }
+    
 });
 
 //Send Email
-function sendEmail(email) {
+function sendEmailToStudent(email, name) {
+
 	Email.send({
 	Host: "smtp.gmail.com",
 	Username : `106network@gmail.com`,
 	Password : `21290104961166`,
 	To : `${email}`,
 	From : "106network@gmail.com",
-	Subject : "This is a test email",
-	Body : "<email body>",
+	Subject : "You've Been Matched Up!",
+	Body : `Hello ${name}!
+    \n
+    We thought we should let you know that you've been paired up with a mentor! 
+    \n
+    They will be in contact with you shortly! Keep a look out!`,
 	}).then(
-		message => alert("A confirmation email was sent")
+		//message => alert("A confirmation email was sent")
+	);
+}
+
+function sendEmailToMentor(mentorEmail, mentorName, email, name, subject) {
+	
+    Email.send({
+	Host: "smtp.gmail.com",
+	Username : `106network@gmail.com`,
+	Password : `21290104961166`,
+	To : `${mentorEmail}`,
+	From : "106network@gmail.com",
+	Subject : "You've Been Matched Up!",
+	Body : `Hello ${mentorName}!
+    \n
+    We've just sent an email to ${name} to let them know you're willing to mentor them in ${subject}! 
+    \n
+    Contact them quickly at ${email}`,
+	}).then(
+		//message => alert("A confirmation email was sent")
 	);
 }
