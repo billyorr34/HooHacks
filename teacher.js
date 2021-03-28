@@ -15,7 +15,7 @@ class UI {
         row.innerHTML = `<td>${book.title}</td>
                         <td>${book.author}</td>
                          <td>${book.isbn}</td>
-                        <td><a href = "#" class = "delete">X<a></td>`;
+                        <td><a href = "#" class = "delete">Accept<a></td>`;
 
     list.appendChild(row);
     }
@@ -185,7 +185,7 @@ function sendEmailToMentor(mentorEmail, mentorName, email, name, subject) {
 	Password : `21290104961166`,
 	To : `${mentorEmail}`,
 	From : "106network@gmail.com",
-	Subject : "You've Been Matched Up!",
+	Subject : "Here is your new student!",
 	Body : `Hello ${mentorName}!
     \n
     We've just sent an email to ${name} to let them know you're willing to mentor them in ${subject}! 

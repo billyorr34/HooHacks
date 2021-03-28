@@ -4,11 +4,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Boostrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+
+    <!-- Personal CSS -->
+    <link rel="stylesheet" href="style.css">
+
     <title>Title Page</title>
+
+    <style>
+        #content {       
+            text-align: center;
+            padding-top: 25%;
+            color: black;
+        }
+
+        /* body {
+            background-image: url('library.jpeg');
+        } */
+
+        a:hover, a:visited, a:link, a:active {   
+            text-decoration: none;
+        }
+
+    </style>
+
 </head>
 <body>
-    <button id = "student">Student</button>
-    <button id = "teacher">Teacher</button>
+
+    <div class = "container">
+		<div class = "row">
+			<div class = "col-lg-12">
+				<div id = "content">
+					<h1>EDU Link</h1>
+					<h3>Open Source Tutoring for Individuals Anywhere and Everywhere</h3>
+					<hr>
+                    <br>
+                    <a style = "margin-right: 1cm;" href="#" class="cta" id = "student">
+                        <span>Student</span>
+                        <svg width="13px" height="10px" viewBox="0 0 13 10">
+                          <path d="M1,5 L11,5"></path>
+                          <polyline points="8 1 12 5 8 9"></polyline>
+                        </svg>
+                    </a>
+                    <a href="#" class="cta" id = "teacher">
+                        <span>Teacher</span>
+                        <svg width="13px" height="10px" viewBox="0 0 13 10">
+                          <path d="M1,5 L11,5"></path>
+                          <polyline points="8 1 12 5 8 9"></polyline>
+                        </svg>
+                    </a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    
+
     
     <script>
         document.querySelector(`#student`).onclick = () => {
